@@ -197,6 +197,19 @@ body, html {
   margin-bottom: 0.25rem;
 }
 
+.carteAime {
+  transition-duration: .25s;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  mix-blend-mode: lighten;
+}
 
 
 /* footer */
@@ -390,6 +403,9 @@ body, html {
 }
 .delay-8{
   animation-delay: 2.5s;
+}
+.delay-9{
+  animation-delay: 2.75s;
 }
 .menuItemHeader {
   white-space: nowrap;
