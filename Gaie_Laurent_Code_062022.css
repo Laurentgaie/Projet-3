@@ -121,6 +121,18 @@ body, html {
     font-weight: 700;
   }
 
+  .recherchetexte input{
+    background: #EAEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .big{
+    font-size: 25px;
+  }
+
   .explore {
   padding: 2rem;
   text-align: center;
@@ -283,7 +295,8 @@ body, html {
 }
 
 .carteAime {
-  transition-duration: .25s;
+  opacity: 1;
+  transition-duration: .025s;
   background-color: white;
   position: absolute;
   top: 0;
@@ -296,6 +309,28 @@ body, html {
   mix-blend-mode: lighten;
 }
 
+.menuBouton:hover .carteAime{
+  opacity: 0;
+}
+
+.carteAimebis {
+  opacity: 0;
+  transition-duration: .025s;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  mix-blend-mode: lighten;
+  color: red;
+}
+.menuBouton:hover .carteAimebis{
+  opacity: 1;
+}
 
 /* footer */
 
@@ -391,24 +426,9 @@ body, html {
   background-color: black;
 }
 
-.menuBouton::before{
-  opacity: 0;
-  transition: 0.5s;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: red;
-}
-
-.menuBouton:hover::before{
-  opacity: 1;
-}
-
 .menuAime {
-  transition-duration: .25s;
+  opacity: 1;
+  transition-duration: .025s;
   background-color: #f6f6f6;
   position: absolute;
   top: 0;
@@ -420,6 +440,30 @@ body, html {
   justify-content:center;
   mix-blend-mode: lighten;
 }
+.menuBouton:hover .menuAime{
+  opacity: 0;
+}
+
+.menuAimebis {
+  opacity: 0;
+  transition-duration: .025s;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  mix-blend-mode: lighten;
+  color: red;
+}
+
+.menuBouton:hover .menuAimebis{
+  opacity: 1;
+}
+
 .sousMenus{
   display: flex;
   flex-direction: column;
