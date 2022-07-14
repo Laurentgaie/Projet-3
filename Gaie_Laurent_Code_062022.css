@@ -3,6 +3,91 @@ body, html {
   font-family: 'Roboto', sans-serif;
   }
 
+  /* loader*/
+  
+  .loader{
+    background: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeout 0.2s 3s forwards;
+}
+
+@keyframes fadeout{
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+
+.bigspinner{
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    border: 3rem solid rgba(161, 160, 160, 0);
+    border-top: 3rem solid #9356dc;
+    border-left: 3rem solid #9356dc;
+    border-bottom: 3rem solid #9356dc;
+    animation: spinneroff 0.8s 0.2s 5;
+}
+
+@keyframes spinneroff{
+    0%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.spinner{
+    border: 2rem solid rgba(161, 160, 160, 0);
+    border-top: 2rem solid #ff79da;
+    border-right: 2rem solid #ff79da;
+    border-bottom: 2rem solid #ff79da;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    opacity: 1;
+    animation: spinner 0.8s 0.2s 5;
+    position: absolute;
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.smallspinner{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1.5rem solid rgba(161, 160, 160, 0);
+    border-top: 1.5rem solid #99e2d0;
+    border-left: 1.5rem solid #99e2d0;
+    border-bottom: 1.5rem solid #99e2d0;
+    animation: spinneroff 0.8s 0.2s 5;
+}
+
+
+/*général*/
+
 .bold{
   font-weight: bold;
 }
@@ -83,7 +168,7 @@ body, html {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1800px;
   margin: 3rem 1rem;
   position: relative;
 }
@@ -274,7 +359,7 @@ body, html {
   object-fit: cover;
 }
 .containerBis{
-  max-width: 1280px;
+  max-width: 1800px;
 }
 .menu {
   margin-top: -4rem;
@@ -315,8 +400,7 @@ body, html {
   left: 0;
   height: 100%;
   width: 100%;
-  background:linear-gradient(0deg,#9356DC 0%,#FF79DA 100%);
-  font-weight: bold;
+  background: red;
 }
 
 .menuBouton:hover::before{
