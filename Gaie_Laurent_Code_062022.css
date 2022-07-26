@@ -296,17 +296,13 @@ body, html {
 
 .carteAime {
   opacity: 1;
-  transition-duration: .025s;
+  transition: opacity 1000ms ease-in;
   background-color: white;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  mix-blend-mode: lighten;
 }
 
 .menuBouton:hover .carteAime{
@@ -315,17 +311,13 @@ body, html {
 
 .carteAimebis {
   opacity: 0;
-  transition-duration: .025s;
+  transition: opacity 300ms ease-in;
   background-color: white;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  mix-blend-mode: lighten;
   color: red;
 }
 .menuBouton:hover .carteAimebis{
@@ -423,12 +415,12 @@ body, html {
   justify-content:center;
   cursor: pointer;
   position: relative;
-  background-color: black;
+  z-index: 1;
 }
 
 .menuAime {
   opacity: 1;
-  transition-duration: .025s;
+  transition: opacity 300ms ease-in;
   background-color: #f6f6f6;
   position: absolute;
   top: 0;
@@ -446,7 +438,7 @@ body, html {
 
 .menuAimebis {
   opacity: 0;
-  transition-duration: .025s;
+  transition: opacity 250ms ease-in;
   background-color: #f6f6f6;
   position: absolute;
   top: 0;
