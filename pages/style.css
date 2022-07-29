@@ -1,0 +1,615 @@
+body, html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  }
+
+  /* loader*/
+  
+  .loader{
+    background: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeout 0.2s 3s forwards;
+}
+
+@keyframes fadeout{
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+
+.bigspinner{
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    border: 3rem solid rgba(161, 160, 160, 0);
+    border-top: 3rem solid #9356dc;
+    border-left: 3rem solid #9356dc;
+    border-bottom: 3rem solid #9356dc;
+    animation: spinneroff 0.8s 0.2s 5;
+}
+
+@keyframes spinneroff{
+    0%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.spinner{
+    border: 2rem solid rgba(161, 160, 160, 0);
+    border-top: 2rem solid #ff79da;
+    border-right: 2rem solid #ff79da;
+    border-bottom: 2rem solid #ff79da;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    opacity: 1;
+    animation: spinner 0.8s 0.2s 5;
+    position: absolute;
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.smallspinner{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1.5rem solid rgba(161, 160, 160, 0);
+    border-top: 1.5rem solid #99e2d0;
+    border-left: 1.5rem solid #99e2d0;
+    border-bottom: 1.5rem solid #99e2d0;
+    animation: spinneroff 0.8s 0.2s 5;
+}
+
+
+/*général*/
+
+.bold{
+  font-weight: bold;
+}
+
+.header {
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 1px 5px darkgray;
+  }
+
+ .logo {
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    text-align: center;
+    width: auto;
+  }
+  .recherche {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: #EAEDED;
+  font-size: 1.2rem;
+  position: relative;
+  }
+ .rechercheicon {
+    margin-right: 1rem;
+  }
+
+  .recherchetexte {
+    font-weight: 700;
+  }
+
+  .recherchetexte input{
+    background: #EAEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .big{
+    font-size: 25px;
+  }
+
+  .explore {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  height: 220px;
+
+  }
+
+  .exploretitle {
+    margin: 0;
+  }
+
+  .exploresubtitle {
+    font-weight: 300;
+    margin: 1.5rem 0;
+  }
+
+  .nodeco{
+    text-decoration: none;
+  }
+
+  .bouton{
+  display: inline-block;
+  border: 0;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-image: linear-gradient(#FF79DA,#9356DC);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .bouton:hover{
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
+}
+
+/* Fonctionnement */
+
+.fonc{
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 3rem 1rem;
+  position: relative;
+}
+
+.fonctitre{
+  margin: 2rem;
+}
+
+.fonclistes{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: compteListe;
+}
+.foncliste{
+  padding: 1.5rem;
+  margin: 1rem 0.75rem 1rem 0.75rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  display: flex;
+  position: relative;
+}
+.foncliste::before {
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  background: #9356DC;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -0.75rem;
+}
+.foncliste:hover{
+  background-color: #faf0fc;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+
+}
+.foncliste:hover > .foncicon{
+  color: #9356DC;
+}
+
+.foncicon{
+  margin-right: 1rem;
+  color: #7e7e7e;
+}
+ /* restaurants */
+
+ .restaurants {
+  background-color: #f6f6f6;
+  padding: 0.5rem
+  }
+
+.cartes{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.carte {
+  background-color: white;
+  border-radius: 1rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+}
+.carte:hover{
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
+}
+.carteimg{
+  height: 12rem;
+  width: 100%;
+  border: transparent solid 0px;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: none;
+  object-fit: cover;
+}
+.nouveau{
+  background-color: #99E2D0;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  font-weight: bold;
+}
+
+.cartebas{
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.coeur{
+  flex: 1;
+}
+
+.cartetitre{
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+.cartesoustitre{
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.carteAime {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.menuBouton:hover .carteAime{
+  opacity: 0;
+}
+
+.carteAimebis {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  background: -webkit-linear-gradient(#FF79DA,#9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+}
+.menuBouton:hover .carteAimebis{
+  opacity: 1;
+}
+
+/* footer */
+
+.footer{
+  background-color: #353535;
+}
+.footercontainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.footerlogo{
+  color: white;
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footerliste{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footerlist{
+  margin: 0.5rem 0;
+}
+.footerlien{
+  color: white;
+  text-decoration: none;
+}
+
+.footericone{
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/* Menus restaurants */
+
+.BackArrow{
+  position: relative;
+  }
+
+.headerArrow{
+  position: absolute;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: black;
+}
+  .MenuImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.MenuImg1{
+  max-width: 100%;
+  max-height: 15rem;
+  width: 100%;
+  object-fit: cover;
+
+}
+.containerBis{
+  max-width: 1800px;
+}
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+}
+.menuHeader {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuTitre {
+  font-family: "Shrikhand", "cursive";
+}
+.menuBouton {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: transparent 0px solid;
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.menuAime {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  mix-blend-mode: lighten;
+}
+.menuBouton:hover .menuAime{
+  opacity: 0;
+}
+
+.menuAimebis {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+  background: -webkit-linear-gradient(#FF79DA,#9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  mix-blend-mode: lighten;
+
+}
+
+.menuBouton:hover .menuAimebis{
+  opacity: 1;
+}
+
+.sousMenus{
+  display: flex;
+  flex-direction: column;
+}
+
+.sousMenu {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.sousMenutitre{
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: normal;
+}
+.sousMenutitre::after{
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.menuItem {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  animation: itemAppear .6s;
+  animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+  animation-fill-mode: both;
+  transform: scale(0);
+  max-width: 100%;
+}
+
+.delay-0{
+  animation-delay: 0.5s;
+}
+.delay-1{
+  animation-delay: 0.75s;
+}
+.delay-2{
+  animation-delay: 1s;
+}
+.delay-3{
+  animation-delay: 1.25s;
+}
+.delay-4{
+  animation-delay: 1.5s;
+}
+.delay-5{
+  animation-delay: 1.75s;
+}
+.delay-6{
+  animation-delay: 2s;
+}
+.delay-7{
+  animation-delay: 2.25s;
+}
+.delay-8{
+  animation-delay: 2.5s;
+}
+.delay-9{
+  animation-delay: 2.75s;
+}
+.menuItemHeader {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.menuItemTitre {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menuItemDescription {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menuItemPrix{
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.menuItemConfirmation{
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition-duration: 0.5s;
+}
+
+.menuItem:hover .menuItemConfirmation{
+  margin-right: -1rem;
+}
+
+.menuItemIcone{
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s; 
+}
+
+.menuItem:hover .menuItemIcone{
+  transform: rotate(0);
+}
+
+.IconeBis{
+  color: #99E2D0 ;
+}
+.boutonBas{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* keyframes */
+@keyframes itemAppear {
+  0% {
+    transform: scale(0)
+  }
+  100% {
+    transform: scale(1);
+  }
+}
